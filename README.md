@@ -1,6 +1,8 @@
 # Blue Owl Capital 3-Statement-Model
-#### Full 3-statement financial model for Blue Owl Capital (NYSE: OWL), built from live SEC EDGAR data using Power Query and Excel.
+### Full 3-statement financial model for Blue Owl Capital (NYSE: OWL), built from live SEC EDGAR data using Power Query and Excel.
+
 This project extracts live SEC filing data via the XBRL API, transforms it with Power Query, and builds a linked Income Statement, Balance Sheet, and Cash Flow Statement, reconciled to the 10-K.
+![3 Stmts](images/OWL_Stmt.png)	
 
 ### Key Components:
 - **Automated Data Pipeline** : Power Query pulls financials directly from SEC EDGAR's JSON API (CIK 0001823945), eliminating manual data entry
@@ -10,22 +12,31 @@ This project extracts live SEC filing data via the XBRL API, transforms it with 
 - **Balance Sheet Check** : automatic validation that Assets = Liabilities + Equity
 - **Cash Flow Reconciliation** : links net income to operating cash flow with non-cash adjustments
 
-### Tools Used:
+### Tools:
 - Excel
 - Power Query (M language)
 - SEC EDGAR XBRL API
 
+## Data Source
+Raw data pulled via SEC EDGAR's XBRL Company Facts API (JSON):
+[`CIK0001823945.json`](https://data.sec.gov/api/xbrl/companyfacts/CIK0001823945.json)
+
+> [!NOTE]
+> This endpoint returns all GAAP-tagged financial facts Blue Owl has reported across its filing history, which are then filtered and transformed via Power Query into the model's Income Statement, Balance Sheet, and Cash Flow Statement.
+
+Source: [View Blue Owl's latest 10-K on SEC EDGAR](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001823945&type=10-K)
+
 #### Skills:
-```python
 - Financial statement analysis
 - Data extraction & transformation
 - Formula-based modeling
 - Assumption-driven forecasting
 - Ratio analysis
-```
 
-*For demonstration purposes only. Prepared independently by Kristen Gallagher.*
+> [!NOTE]
+> *For demonstration purposes only. Prepared independently by Kristen Gallagher.*
 
 ## License
 
-© 2025 Kristen Gallagher. All rights reserved. This work is made available for viewing and reference purposes only. You may not reproduce, distribute, modify, or claim this work as your own without explicit written permission from the author.
+© 2025 Kristen Gallagher. All rights reserved. This work is made available for viewing and reference purposes only. Reproduction, distribution, modification, or use of this work without explicit written permission from the author is strictly prohibited. Any reference to this work must include appropriate credit to the author.
+
